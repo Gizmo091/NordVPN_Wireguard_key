@@ -7,5 +7,5 @@
 ### to get server info.
  
 ### Server info for on germany server
-curl --silent "https://api.nordvpn.com/v1/servers?limit=16384"  | jq --raw-output '[.[] | select(.locations[].country.code == "DE") | select(.groups[].identifier="wireguard_udp")][0]' | jq -r '.hostname, .station, (.locations|.[]|.country|.city.name), (.locations|.[]|.country|.name), (.technologies|.[].metadata|.[].value), .load'
+`curl --silent "https://api.nordvpn.com/v1/servers?limit=16384"  | jq --raw-output '[.[] | select(.locations[].country.code == "DE") | select(.groups[].identifier="wireguard_udp")][0]' | jq -r '.hostname, .station, (.locations|.[]|.country|.city.name), (.locations|.[]|.country|.name), (.technologies|.[].metadata|.[].value), .load'`
 
